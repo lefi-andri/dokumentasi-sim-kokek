@@ -1,6 +1,10 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  daisyui: {
+    themes: ["light", "dark"],
+  },
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,6 +19,11 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/forms"),
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/aspect-ratio"),
+    require("daisyui"),
+  ],
 };
 export default config;
